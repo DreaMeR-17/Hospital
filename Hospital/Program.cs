@@ -6,11 +6,12 @@ namespace Hospital
     {
         static void Main(string[] args)
         {
-            int minForPerson = 10;
+            int minuteForPerson = 10;
             int personInQueue;
-            int minInHour = 60;
-            int minutes;
-            int hours;
+            int minutesInHour = 60;
+            int minutesWaited;
+            int hoursWaited;
+            int allMinutesWaited;
 
             Console.WriteLine("Добро пожаловать!");
             Console.WriteLine("Среднее время приема одного человека: " + minForPerson);
@@ -18,10 +19,11 @@ namespace Hospital
             Console.Write("Введите количество человек перед вами: ");
             personInQueue = Convert.ToInt32(Console.ReadLine());
 
-            hours = (minForPerson * personInQueue) / minInHour;
-            minutes = (minForPerson * personInQueue) % minInHour;
+            allMinutesWaited = minuteForPerson * personInQueue;
+            hoursWaited = allMinutesWaited / minutesInHour;
+            minutesWaited = allMinutesWaited % minutesInHour;
 
-            Console.WriteLine($"Перед вами {personInQueue} человек, время ожидания составит: {hours} часа {minutes} минут");
+            Console.WriteLine($"Перед вами {personInQueue} человек, время ожидания составит: {hoursWaited} часа {minutesWaited} минут");
         }
     }
 }
